@@ -74,7 +74,8 @@
 <body id="top" class="{% block body_classes %}{{ body_classes }}{% endblock %}">
     <div id="page-wrapper">
     {% block header %}
-        <section id="header" class="section">
+        {% include 'partials/navbar.html.twig' %}
+        {# <section id="header" class="section">
             <section class="container {{ grid_size }}">
                 <nav class="navbar">
                     <section class="navbar-section logo">
@@ -95,7 +96,7 @@
                     </section>
                 </nav>
             </section>
-        </section>
+        </section> #}
         <div class="mobile-menu">
             <div class="button_container" id="toggle">
                 <span class="top"></span>
