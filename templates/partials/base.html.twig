@@ -24,12 +24,46 @@
     {% do assets.addCss('theme://css-compiled/theme'~compress) %}
     {% do assets.addCss('theme://css/custom.css') %}
     {% do assets.addCss('theme://css/line-awesome.min.css') %}
+
+    {# New assets #}
+
+    {% do assets.addCss('theme://assets/bootstrap/css/bootstrap.min.css') %}
+    {% do assets.addCss('theme://assets/bootstrap/css/bootstrap-select.min.css') %}
+    {% do assets.addCss('theme://assets/bootstrap/css/rvfs.css') %}
+
+    {% do assets.addCss('theme://assets/elagent-icon/style.css') %}
+    {% do assets.addCss('theme://assets/font-awesome/css/all.css') %}
+    {% do assets.addCss('theme://assets/niceselectpicker/nice-select.css') %}
+    {% do assets.addCss('theme://assets/animation/animate.css') %}
+    {% do assets.addCss('theme://assets/prism/prism.css') %}
+    {% do assets.addCss('theme://assets/mcustomscrollbar/jquery.mCustomScrollbar.min.css') %}
+    {% do assets.addCss('theme://assets/css/style.css') %}
+    {% do assets.addCss('theme://assets/css/responsive.css') %}
 {% endblock %}
 
 {% block javascripts %}
     {% do assets.addJs('jquery', 101) %}
     {% do assets.addJs('theme://js/jquery.treemenu.js', {group:'bottom'}) %}
     {% do assets.addJs('theme://js/site.js', {group:'bottom'}) %}
+
+    {# New assets #}
+    {% do assets.addJs('theme://assets/js/jquery-3.2.1.min.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://assets/js/pre-loader.js', {group:'bottom'}) %}
+
+    {% do assets.addJs('theme://assets/bootstrap/js/popper.min.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://assets/bootstrap/js/bootstrap.min.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://assets/bootstrap/js/bootstrap-select.min.js', {group:'bottom'}) %}
+
+    {% do assets.addJs('theme://assets/js/parallaxie.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://assets/js/TweenMax.min.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://assets/js/anchor.js', {group:'bottom'}) %}
+
+    {% do assets.addJs('theme://assets/wow/wow.min.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://assets/prism/prism.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://assets/niceselectpicker/jquery.nice-select.min.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://assets/niceselectpicker/jquery.mCustomScrollbar.concat.min.js', {group:'bottom'}) %}
+
+    {% do assets.addJs('theme://assets/js/main.js', {group:'bottom'}) %}
 {% endblock %}
 
 {% block assets deferred %}
@@ -75,13 +109,19 @@
 
         <section id="start">
         {% block body %}
-            <section id="body-wrapper" class="section">
-                <section class="container {{ grid_size }}">
-                    {% block messages %}
-                        {% include 'partials/messages.html.twig' ignore missing %}
-                    {% endblock %}
-                    {{ block('content_surround') }}
-                </section>
+            <section class="doc_documentation_area doc_documentation_full_area" id="sticky_doc">
+                <div class="overlay_bg"></div>
+                <div class="container-fluid pl-60 pr-60 {{ grid_size }}">
+                    <div class="row">
+
+                        {% include 'partials/left-sidebar.html.twig' %}
+
+                        {% block messages %}
+                            {% include 'partials/messages.html.twig' ignore missing %}
+                        {% endblock %}
+                        {{ block('content_surround') }}
+                    </div>
+                </div>
             </section>
         {% endblock %}
         </section>

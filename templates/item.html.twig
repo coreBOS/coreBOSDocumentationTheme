@@ -20,22 +20,23 @@
 {% endblock %}
 
 {% block body %}
-<section id="body-wrapper" class="section blog-listing">
-    <section class="container {{ grid_size }}">
+ <section class="doc_documentation_area doc_documentation_full_area" id="sticky_doc">
+    <div class="overlay_bg"></div>
 
-        {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
-            {% include 'partials/breadcrumbs.html.twig' %}
-        {% endif %}
+            {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
+                {% include 'partials/breadcrumbs.html.twig' %}
+            {% endif %}
 
-        {% embed 'partials/layout.html.twig' %}
-            {% block item %}
-                {% include 'partials/blog-item.html.twig' %}
-            {% endblock %}
-            {% block sidebar %}
-                {% include 'partials/sidebar.html.twig' %}
-            {% endblock %}
-        {% endembed %}
+            {% embed 'partials/layout.html.twig' %}
+                {% block sidebar %}
+                    {% include 'partials/left-sidebar.html.twig' %}
+                {% endblock %}
+                {% block item %}
+                    {% include 'partials/blog-item.html.twig' %}
+                {% endblock %}
 
-    </section>
+            {% endembed %}
+        </div>
+    </div>
 </section>
 {% endblock %}

@@ -1,0 +1,16 @@
+{% import 'macros/macros.html.twig' as macros %}
+
+<div class="col-lg-2 doc_mobile_menu display_none">
+    <aside class="doc_left_sidebarlist">
+        <div class="open_icon" id="left">
+            <i class="arrow_carrot-right"></i>
+            <i class="arrow_carrot-left"></i>
+        </div>
+        <div class="scroll">
+            <ul class="list-unstyled nav-sidebar">
+            {{ macros.nav_loop(pages) }}
+            </ul>
+        </div>
+    </aside>
+</div>
+<!-- Left SideBar End -->
