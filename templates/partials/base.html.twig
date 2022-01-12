@@ -1,4 +1,4 @@
-{% set body_classes = body_class(['header-fixed', 'header-animated', 'header-dark', 'header-transparent', 'sticky-footer']) %}
+{# {% set body_classes = body_class(['header-fixed', 'header-animated', 'header-dark', 'header-transparent', 'sticky-footer']) %} #}
 {% set grid_size = theme_var('grid-size') %}
 {% set compress = theme_var('production-mode') ? '.min.css' : '.css' %}
 {% use 'blocks/base.html.twig' %}
@@ -18,10 +18,10 @@
 {% endblock head %}
 
 {% block stylesheets %}
-    {% do assets.addCss('theme://css-compiled/spectre'~compress) %}
+    {# {% do assets.addCss('theme://css-compiled/spectre'~compress) %} #}
     {% if theme_var('spectre.exp') %}{% do assets.addCss('theme://css-compiled/spectre-exp'~compress)  %}{% endif %}
     {% if theme_var('spectre.icons') %}{%  do assets.addCss('theme://css-compiled/spectre-icons'~compress) %}{% endif %}
-    {% do assets.addCss('theme://css-compiled/theme'~compress) %}
+    {# {% do assets.addCss('theme://css-compiled/theme'~compress) %} #}
     {% do assets.addCss('theme://css/custom.css') %}
     {% do assets.addCss('theme://css/line-awesome.min.css') %}
 
@@ -71,42 +71,43 @@
     {{ assets.js()|raw }}
 {% endblock %}
 </head>
-<body id="top" class="{% block body_classes %}{{ body_classes }}{% endblock %}">
-    <div id="page-wrapper">
-    {% block header %}
-        {% include 'partials/navbar.html.twig' %}
-        {# <section id="header" class="section">
-            <section class="container {{ grid_size }}">
-                <nav class="navbar">
-                    <section class="navbar-section logo">
-                        {% include 'partials/logo.html.twig' %}
-                    </section>
-                    <section class="navbar-section desktop-menu">
+<body id="top"  data-spy="scroll" data-target="#navbar-example3" data-offset="86" data-scroll-animation="true" class="doc full-width-doc">
+{# <body id="top" class="{% block body_classes %}{{ body_classes }}{% endblock %}"> #}
+    <div id="page-wrapper" class="body_wrapper">
+        {% block header %}
+            {% include 'partials/navbar.html.twig' %}
+            {# <section id="header" class="section">
+                <section class="container {{ grid_size }}">
+                    <nav class="navbar">
+                        <section class="navbar-section logo">
+                            {% include 'partials/logo.html.twig' %}
+                        </section>
+                        <section class="navbar-section desktop-menu">
 
-                        <nav class="dropmenu animated">
-                        {% block header_navigation %}
-                            {% include 'partials/navigation.html.twig' %}
-                        {% endblock %}
-                        </nav>
+                            <nav class="dropmenu animated">
+                            {% block header_navigation %}
+                                {% include 'partials/navigation.html.twig' %}
+                            {% endblock %}
+                            </nav>
 
-                        {% if config.plugins.login.enabled and grav.user.username %}
-                            <span class="login-status-wrapper"><i class="fa fa-user"></i> {% include 'partials/login-status.html.twig' %}</span>
-                        {% endif %}
+                            {% if config.plugins.login.enabled and grav.user.username %}
+                                <span class="login-status-wrapper"><i class="fa fa-user"></i> {% include 'partials/login-status.html.twig' %}</span>
+                            {% endif %}
 
-                    </section>
-                </nav>
-            </section>
-        </section> #}
-        <div class="mobile-menu">
-            <div class="button_container" id="toggle">
-                <span class="top"></span>
-                <span class="middle"></span>
-                <span class="bottom"></span>
+                        </section>
+                    </nav>
+                </section>
+            </section> #}
+            <div class="mobile-menu">
+                <div class="button_container" id="toggle">
+                    <span class="top"></span>
+                    <span class="middle"></span>
+                    <span class="bottom"></span>
+                </div>
             </div>
-        </div>
-    {% endblock %}
+        {% endblock %}
 
-    {% block hero %}{% endblock %}
+        {% block hero %}{% endblock %}
 
         <section id="start">
         {% block body %}

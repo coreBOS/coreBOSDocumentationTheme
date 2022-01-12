@@ -2002,8 +2002,7 @@ ul.list-style li:last-child {
 /*=========== End Banner Support ============*/
 /*=========== Start breadcrumb_area css ============*/
 .breadcrumb_area {
-  background-image: linear-gradient(60deg, #10b3d6 0%, #1d2746 100%);
-  padding: 190px 0 95px;
+  padding: 0;
   position: relative;
 }
 .breadcrumb_area .one {

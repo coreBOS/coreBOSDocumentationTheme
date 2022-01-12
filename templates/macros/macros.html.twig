@@ -8,9 +8,17 @@
       </a>
       {% if p.children.visible.count > 0 %}
         <span class="icon"><i class="arrow_carrot-down"></i></span>
-      <ul  class="list-unstyled dropdown_nav">
-        {{ macros.nav_loop(p) }}
-      </ul>
+
+        <ul class="list-unstyled dropdown_nav">
+        {% for child in p.children.visible %}
+            <li class="{{ active_page }}">
+                <a href="{{ child.url }}">
+                    {{ child.menu }}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+
       {% endif %}
     </li>
   {% endfor %}
