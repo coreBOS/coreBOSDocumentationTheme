@@ -4136,7 +4136,7 @@ ul.list-style li:last-child {
 }
 
 .full-width-doc .doc_rightsidebar {
-  padding-right: 15px;
+  padding-right: 0px;
 }
 .full-width-doc .doc_rightsidebar .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
   width: 225px;
@@ -4242,9 +4242,13 @@ ul.list-style li:last-child {
 .doc_menu .nav-link {
   font-size: 14px;
   font-weight: 400;
-  line-height: 30px;
-  padding: 0;
+  padding: 7px 0px 7px 3px;
   color: #6b707f;
+  border: 0;
+  border-bottom-width: 1.2px;
+  border-style: dashed;
+  border-color: #dae1e76e;
+  line-height: 1.5;
 }
 .doc_menu .nav-link.active, .doc_menu .nav-link:hover {
   color: #1d2746;

@@ -631,7 +631,7 @@
 			var canvas = $('#kbDoc-chart');
 			canvas.attr('height', 125);
 			// chart.canvas.parentNode.style.height = '128px';
-			// chart.canvas.parentNode.style.width = '128px';	
+			// chart.canvas.parentNode.style.width = '128px';
 
 			var chart = new Chart(canvas, {
 				type: 'polarArea',
@@ -687,7 +687,7 @@
 
 		});
 
-		
+
 		$('.short-by a').click( function() {
 			$(this).toggleClass('active-short').siblings().removeClass('active-short');
 		});

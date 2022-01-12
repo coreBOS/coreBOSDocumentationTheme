@@ -11,25 +11,38 @@
             <label for="something" class="tab-btn"><i class="far fa-moon"></i></label>
         </div>
 
-        <!-- <select id="mySelect" name="os">
-            <option value="windows" data-content="<i class='fab fa-windows'></i> Windows">Windows</option>
-            <option value="ios" data-content="<i class='fab fa-apple'></i> Ios">Ios</option>
-            <option value="linux" data-content="<i class='fab fa-linux'></i> Linux">Linux</option>
-        </select> -->
-
-        <div id="font-switcher" class="d-flex justify-content-between align-items-center">
-            <div id="rvfs-controllers" class="fontsize-controllers group"></div>
-            <a href="javascript:window.print()" class="print"><i class="icon_printer"></i></a>
+        {% macro toc_loop(items) %}
+            {% import _self as self %}
+            {% for item in items %}
+                {% set class = loop.first ? 'first' : loop.last ? 'last' : null %}
+                <nav {% if class %}class="{{ class }}"{% endif %} class="list-unstyled doc_menu">
+                    <a href="{{ item.uri }}"  class="nav-link">{{ item.label }}</a>
+                    {% if item.children|length > 0 %}
+                        <nav {% if class %}class="{{ class }}"{% endif %} class="list-unstyled doc_menu">
+                            {{ _self.toc_loop(item.children) }}
+                        </nav>
+                    {% endif %}
+                </nav>
+            {% endfor %}
+        {% endmacro %}
+        {% if config.get('plugins.page-toc.active') or attribute(page.header, 'page-toc').active %}
+        <div class="page-toc">
+            {% set table_of_contents = toc_items(page.content) %}
+            {% if table_of_contents is not empty %}
+                <h6>On this page:</h6>
+                <nav {% if class %}class="{{ class }}"{% endif %} class="list-unstyled doc_menu">
+                    {{ _self.toc_loop(table_of_contents.children) }}
+                </nav>
+            {% endif %}
         </div>
-        <br>
-
-        <h6>On this page:</h6>
-        <nav class="list-unstyled doc_menu" id="navbar-example3">
+{#
+        <nav class="list-unstyled doc_menu" >
             <a href="#documentation" class="nav-link active">Documentation</a>
             <a href="#getting" class="nav-link">Getting started</a>
             <a href="#version" class="nav-link">Test coreBOS Version</a>
             <a href="#developer" class="nav-link">Not a developer?</a>
             <a href="#help" class="nav-link">We're here to help!</a>
-        </nav>
+        </nav> #}
+        {% endif %}
     </div>
 </div>
