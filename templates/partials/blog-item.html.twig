@@ -10,9 +10,9 @@
                 {% include 'partials/blog/taxonomy.html.twig' %}
             </div>
         {% endif %}
-            <div class="e-content">
+           <article class="documentation_body" id="documentation">
                 {{ page.content|raw }}
-            </div>
+            </article>
 
             {% if page.header.continue_link is same as(true) and config.plugins.comments.enabled %}
                 {% include 'partials/comments.html.twig' %}
@@ -20,15 +20,7 @@
     </div>
 </div>
 
-<p class="prev-next text-center">
-    {% if not page.isLast %}
-            <a class="btn" href="{{ page.prevSibling.url }}"><i class="fa fa-angle-left"></i> {{ 'THEME_QUARK.BLOG.ITEM.PREV_POST'|t }}</a>
-    {% endif %}
 
-    {% if not page.isFirst %}
-        <a class="btn" href="{{ page.nextSibling.url }}">{{ 'THEME_QUARK.BLOG.ITEM.NEXT_POST'|t }} <i class="fa fa-angle-right"></i></a>
-    {% endif %}
-</p>
 
 {#
 <div class="col-lg-8 col-md-8">

@@ -28,14 +28,28 @@
             {% endif %}
 
             {% embed 'partials/layout.html.twig' %}
-                {% block sidebar %}
+                {% block left_sidebar %}
                     {% include 'partials/left-sidebar.html.twig' %}
                 {% endblock %}
                 {% block item %}
                     {% include 'partials/blog-item.html.twig' %}
                 {% endblock %}
-
+                {% block right_sidebar %}
+                    {% include 'partials/right-sidebar.html.twig' %}
+                {% endblock %}
             {% endembed %}
+            {# Add pagination plugin #}
+            {% block NEXT_POST %}
+                <p class="prev-next text-center">
+                    {% if not page.isLast %}
+                        <a class="btn" href="{{ page.prevSibling.url }}"><i class="fa fa-angle-left"></i> {{ 'THEME_QUARK.BLOG.ITEM.PREV_POST'|t }}</a>
+                    {% endif %}
+
+                    {% if not page.isFirst %}
+                        <a class="btn" href="{{ page.nextSibling.url }}">{{ 'THEME_QUARK.BLOG.ITEM.NEXT_POST'|t }} <i class="fa fa-angle-right"></i></a>
+                    {% endif %}
+                </p>
+            {% endblock %}
         </div>
     </div>
 </section>

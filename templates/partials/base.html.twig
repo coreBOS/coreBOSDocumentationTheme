@@ -116,6 +116,8 @@
                     <div class="row">
 
                         {% include 'partials/left-sidebar.html.twig' %}
+                        {# Default has to come here #}
+                        {% include 'partials/right-sidebar.html.twig' %}
 
                         {% block messages %}
                             {% include 'partials/messages.html.twig' ignore missing %}
