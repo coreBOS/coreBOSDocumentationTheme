@@ -3527,6 +3527,7 @@ ul.list-style li:last-child {
 }
 .doc_documentation_area.body_fixed .doc_rightsidebar {
   position: fixed;
+  padding-right: 40px;
   top: 0;
 }
 @media (max-height: 630px) {

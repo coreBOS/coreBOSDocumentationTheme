@@ -23,3 +23,44 @@
     </li>
   {% endfor %}
 {% endmacro %}
+
+{# For third level pages #}
+
+{# {% macro nav_loop(page) %}
+  {% import _self as macros %}
+  {% for p in page.children.visible %}
+    {% set active_page = (p.active or p.activeChild) ? 'active' : '' %}
+        <li class="nav-item {{ active_page }}">
+            <a href="{{ p.url }}" class="nav-link {{ active_page }}">
+                {{ p.menu }}
+            </a>
+            {% if p.children.visible.count > 0 %}
+                <span class="icon"><i class="arrow_carrot-down"></i></span>
+
+                <ul class="list-unstyled dropdown_nav">
+                    {% for page in p.children %}
+                        {% if page.visible %}
+                            {% set active_page = (page.active or page.activeChild) ? 'active' : '' %}
+                            <li class="{{ current_page }}">
+                                <a href="{{ page.url }}" class="{{active_page}}">{{ page.menu }}</a>
+                            </li>
+                            {% if page.children %}
+
+                                <ul style="list-style:none;" >
+                                    {% for child in page.children %}
+                                        {% if child.visible %}
+                                            {% if active_page %}
+                                            <li class="{{ active_page }}"><a href="{{ child.url }}">{{ child.menu }}</a></li>
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+            {% endif %}
+        </li>
+    {% endfor %}
+{% endmacro %} #}
