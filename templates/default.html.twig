@@ -1,5 +1,11 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-    {{ page.content|raw }}
+<ul>
+
+{% for p in page.children %}
+<li><a href="{{p.url}}">{{ p.title }}</a></li>
+{% endfor %}
+
+</ul>
 {% endblock %}

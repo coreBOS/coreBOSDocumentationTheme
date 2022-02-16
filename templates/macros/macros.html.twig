@@ -3,9 +3,15 @@
   {% for p in page.children.visible %}
     {% set active_page = (p.active or p.activeChild) ? 'active' : '' %}
     <li class="nav-item {{ active_page }}">
-      <a href="{{ p.url }}" class="nav-link">
+    {% if p.children.visible.count > 0 %}
+    <p class="nav-link ">
+        {{ p.menu }}
+      </p>
+      {% else %}
+       <a href="{{ p.url }}" class="nav-link">
         {{ p.menu }}
       </a>
+      {% endif %}
       {% if p.children.visible.count > 0 %}
         <span class="icon"><i class="arrow_carrot-down"></i></span>
 

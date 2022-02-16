@@ -1,3 +1,14 @@
+{% set url = url|default(base_url|rtrim('/') ~ '/' ~ config.get('plugins.tntsearch.query_route', 's')|trim('/')) %}
+{% set limit = limit|default(config.get('plugins.tntsearch.limit', 20)) %}
+{% set snippet = snippet|default(config.get('plugins.tntsearch.snippet', 300)) %}
+{% set min = min|default(config.get('plugins.tntsearch.min', 3)) %}
+{% set search_type = search_type|default(config.get('plugins.tntsearch.search_type', 'auto')) %}
+{% set placeholder = placeholder|default('Search...') %}
+{% set live_update = in_page ? live_update|default(config.get('plugins.tntsearch.live_uri_update', 1)) : 0 %}
+{% set nojs_action = config.get('plugins.tntsearch.search_route', '/search')|trim('/') %}
+
+{% set options = { uri: url, limit: limit, snippet: snippet, min: min, in_page: in_page, live_update: live_update, search_type: search_type } %}
+
 <section class="page_breadcrumb">
     <div class="container-fluid pl-60 pr-60">
         <div class="row">
@@ -12,7 +23,33 @@
             <div class="col-lg-8 col-md-8">
             <section class="breadcrumb_area">
                 <div class="container custom_container">
-                    <form action="#" class="banner_search_form banner_search_form_two">
+                    {# TNT search form #}
+                    <form role="form" class="tntsearch-form " action="{{ nojs_action }}" method="get">
+                        {% block tntsearch_input %}
+                        <div id="tntsearch-wrapper" class="form-group{{ dropdown ? ' tntsearch-dropdown' : '' }}">
+                            <input type="text" name="q" class="form-control form-input tntsearch-field{{ in_page ? ' tntsearch-field-inpage' : '' }}" data-tntsearch="{{ options|json_encode|e('html_attr') }}" placeholder="{{ placeholder }}" value="{{ not dropdown ? query|e : '' }}" autofocus>
+                            <span class="tntsearch-clear"{{ not query or dropdown ? ' style="display: none;"' : '' }}>&times;</span>
+                        </div>
+                        {% endblock %}
+                        <div class="tntsearch-results{{ in_page ? ' tntsearch-results-inpage' : '' }}">
+                        {% if tntsearch_results is defined and tntsearch_results is not empty and in_page %}
+                            {% include 'tntquery-ajax.html.twig' %}
+                        {% endif %}
+                        </div>
+                    </form>
+                    {# TNT search form end #}
+                </div>
+            </section>
+            </div>
+            <div class="col-lg-2 col-sm-5">
+                <a href="#" class="date"><i class="icon_clock_alt"></i>Updated on March 03, 2020</a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{# <form action="#" class="banner_search_form banner_search_form_two">
                         <div class="input-group">
                             <input type="search" class="form-control" placeholder='Search ("/" to focus)'>
                             <div class="input-group-append">
@@ -25,16 +62,6 @@
                             </div>
                             <button type="submit"><i class="icon_search"></i></button>
                         </div>
-                    </form>
-                </div>
-            </section>
-            </div>
-            <div class="col-lg-2 col-sm-5">
-                <a href="#" class="date"><i class="icon_clock_alt"></i>Updated on March 03, 2020</a>
-            </div>
-        </div>
-    </div>
-
-</section>
+                    </form> #}
 
 

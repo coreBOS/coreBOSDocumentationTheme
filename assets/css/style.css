@@ -3598,6 +3598,7 @@ ul.list-style li:last-child {
   line-height: 20px;
   font-weight: 500;
   color: #1d2746;
+  transition: all 0.3s ease-in-out;
   position: relative;
 }
 .nav-sidebar .nav-item .nav-link:hover {
