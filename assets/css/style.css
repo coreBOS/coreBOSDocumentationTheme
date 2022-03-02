@@ -2195,7 +2195,8 @@ ul.list-style li:last-child {
   background: #f0f5f7;
   padding: 16px 0;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  box-shadow: 1px 3px 5px rgb(50 50 93 / 8%), 0 1px 1px rgb(0 0 0 / 3%);
 }
 .page_breadcrumb .row {
   align-items: center;
@@ -3628,9 +3629,8 @@ ul.list-style li:last-child {
 .nav-sidebar .nav-item .dropdown_nav {
   padding-left: 32px !important;
   margin-bottom: 0;
-  padding-top: 12px;
   width: 100% !important;
-
+  white-space: nowrap;
   display: none;
 }
 .nav-sidebar .nav-item .dropdown_nav li{
@@ -4249,7 +4249,7 @@ ul.list-style li:last-child {
   border: 0;
   border-bottom-width: 1.2px;
   border-style: dashed;
-  border-color: #dae1e76e;
+  border-color: #dae1e7c4;
   line-height: 1.5;
 }
 .doc_menu .nav-link.active, .doc_menu .nav-link:hover {
@@ -9336,7 +9336,7 @@ blockquote .author {
   /** !-- End Border color **/
 }
 .body_dark .body_wrapper {
-  background: #131417;
+  background: rgb(23, 25, 35, 1)!important;
 }
 .body_dark .sticky_menu .navbar-brand img {
   display: none;
@@ -9369,7 +9369,7 @@ blockquote .author {
   background: #2c303a;
 }
 .body_dark .doc_left_sidebarlist:before {
-  background: #1e1f26;
+  background: linear-gradient(#12141c,#171923,rgba(18,20,28,0))!important;
 }
 .body_dark .doc_rightsidebar .doc_switch input[type=checkbox],
 .body_dark .doc_rightsidebar .dropdown-toggle, .body_dark .fontsize-controllers .btn-group .btn.rvfs-reset, .body_dark .fontsize-controllers .btn-group,
@@ -9422,7 +9422,7 @@ blockquote .author {
   color: #d3d4d4;
 }
 .body_dark .f_bg_color, .body_dark .page_breadcrumb, .body_dark .toggle_btn, .body_dark .doc_accordion .card-header button {
-  background: #1f3341;
+  background: #12141c;
 }
 .body_dark .shortcode_text ul li a,
 .body_dark .tab_shortcode .nav-tabs .nav-item .nav-link.active, .body_dark .page_breadcrumb .breadcrumb .breadcrumb-item.active, .body_dark .breadcrumb-item + .breadcrumb-item::before, .body_dark .toggle_btn.collapsed:before, .body_dark .toggle_btn.collapsed, .body_dark .doc_accordion .card-header button, .body_dark .table {

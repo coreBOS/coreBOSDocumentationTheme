@@ -17,20 +17,7 @@
                     {% include 'partials/left-sidebar.html.twig' %}
                 {% endblock %}
                 {% block item %}
-                <div class="col-lg-8 col-md-8">
-                    <div class="card-header">
-                        {{page.header.title}}
-                    </div>
-                    <ul class="list-group list-group-flush">
-                    {% for p in page.children %}
-
-                            <li class="list-group-item" style="background-color: transparent !important;border: none !important;">
-                                <a href="{{p.url}}">{{ p.title }}</a>
-                            </li>
-
-                    {% endfor %}
-                      </ul>
-                </div>
+                    {% include 'partials/cards.html.twig' %}
                 {% endblock %}
                 {% block right_sidebar %}
                     {% include 'partials/right-sidebar.html.twig' %}

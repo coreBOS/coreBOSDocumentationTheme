@@ -1,23 +1,6 @@
 {% extends 'partials/base.html.twig' %}
-{% set blog = page.find(header_var('blog_url')|defined(theme_var('blog-page'))) %}
-{% set show_breadcrumbs = header_var('show_breadcrumbs', [page, blog])|defined(true) %}
 {% set show_sidebar = header_var('show_sidebar', [page, blog])|defined(true)  %}
 {% set show_pagination = header_var('show_pagination', [page, blog])|defined(true) %}
-{% set hero_image_name = page.header.hero_image %}
-
-{% block hero %}
-    {% if hero_image_name %}
-        {% set hero_image = page.media[hero_image_name] %}
-        {% set content %}
-            <h1>{{ page.title }}</h1>
-            <h2>{{ page.header.subtitle }}</h2>
-            {% include 'partials/blog/date.html.twig' %}
-            {% include 'partials/blog/taxonomy.html.twig' %}
-        {% endset %}
-        {% include 'partials/hero.html.twig' with {id: 'blog-hero'} %}
-
-    {% endif %}
-{% endblock %}
 
 {% block body %}
  <section class="doc_documentation_area doc_documentation_full_area" id="sticky_doc">
@@ -38,7 +21,7 @@
                 {% endblock %}
             {% endembed %}
             {# Add pagination plugin #}
-            {% block NEXT_POST %}
+            {# {% block NEXT_POST %}
                 <p class="prev-next text-center">
                     {% if not page.isLast %}
                         <a class="btn" href="{{ page.prevSibling.url }}"><i class="fa fa-angle-left"></i> {{ 'THEME_QUARK.BLOG.ITEM.PREV_POST'|t }}</a>
@@ -48,7 +31,7 @@
                         <a class="btn" href="{{ page.nextSibling.url }}">{{ 'THEME_QUARK.BLOG.ITEM.NEXT_POST'|t }} <i class="fa fa-angle-right"></i></a>
                     {% endif %}
                 </p>
-            {% endblock %}
+            {% endblock %} #}
         </div>
     </div>
 </section>
