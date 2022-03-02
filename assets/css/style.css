@@ -174,7 +174,7 @@ button:focus {
 }
 
 .sec_pad {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
 .pl-40 {
@@ -2833,9 +2833,9 @@ ul.list-style li:last-child {
 }
 
 .theme_doc_item {
-  box-shadow: 0 4px 8px 0 rgba(4, 73, 89, 0.05);
+  box-shadow: 0 4px 5px 0 rgb(4 73 89 / 14%);
   border-radius: 6px;
-  background: #fff;
+  background: #f0f5f7;
   padding: 30px;
   margin-bottom: 30px;
   transition: all 0.3s linear;
@@ -3561,7 +3561,6 @@ ul.list-style li:last-child {
   height: 100%;
   background: #fafcfd;
   position: absolute;
-  border-bottom: 1px solid #e5e9eb;
   top: 0;
   z-index: -1;
 }
