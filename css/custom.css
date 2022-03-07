@@ -153,10 +153,23 @@ pre[class*="language-"]>code {
   color: #a67f59;
   background: none;
 }
-
 .gradient-bg{
   background: #171923,#12141c,rgba(18,20,28,0)!important;
 }
 .p-name > a{
   color:#10b3d6 !important;
+}
+.search-wrapper .search-input {
+  width: 80%;
+  display: inline-block;
+  border: none;
+  border-bottom: 1px solid grey;
+  background: transparent;
+}
+.full-width{
+  width:100% !important;
+}
+.borders{
+  border-top-right-radius: 0.25rem !important;
+  border-bottom-right-radius: 0.25rem !important;
 }

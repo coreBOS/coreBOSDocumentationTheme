@@ -1,11 +1,4 @@
-{% set url = url|default(base_url|rtrim('/') ~ '/' ~ config.get('plugins.tntsearch.query_route', 's')|trim('/')) %}
-{% set limit = limit|default(config.get('plugins.tntsearch.limit', 20)) %}
-{% set snippet = snippet|default(config.get('plugins.tntsearch.snippet', 300)) %}
-{% set min = min|default(config.get('plugins.tntsearch.min', 3)) %}
-{% set search_type = search_type|default(config.get('plugins.tntsearch.search_type', 'auto')) %}
 {% set placeholder = placeholder|default('Search...') %}
-{% set live_update = in_page ? live_update|default(config.get('plugins.tntsearch.live_uri_update', 1)) : 0 %}
-{% set nojs_action = config.get('plugins.tntsearch.search_route', '/search')|trim('/') %}
 
 {% set options = { uri: url, limit: limit, snippet: snippet, min: min, in_page: in_page, live_update: live_update, search_type: search_type } %}
 
@@ -20,36 +13,28 @@
                 </nav>
             </div>
             <div class="col-lg-7 col-md-8">
-                <section class="breadcrumb_area">
-                    <div class="container custom_container">
-                        {% include 'partials/simplesearch_searchbox.html.twig' %}
-                    </div>
-                </section>
+                {% include 'partials/simplesearch-custom.html.twig' %}
             </div>
             <div class="col-lg-2 col-sm-5">
                 <div class="row justify-content-end">
-                        <a href="https://github.com/tsolucio/corebos" target="_blank" style="margin-right: 10px;" class="btn btn-dark">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://blog.corebos.org/" target="_blank" style="margin-right: 10px;" class="btn btn-info">
-                            <i style="padding-right: 7px;" class="icon_clock_alt"></i>
-                            Updates
-                        </a>
-                        <button class="btn btn-dark"  onclick="darkModeToggle()"><i id="id"  class="fa fa-moon"></i></button>
-
+                    <a href="https://blog.corebos.org/" target="_blank" style="margin-right: 10px;" class="btn btn-info">
+                        <i style="padding-right: 7px;" class="icon_clock_alt"></i>
+                        Updates
+                    </a>
+                    <a href="https://github.com/tsolucio/corebos" target="_blank" style="margin-right: 10px;" class="btn btn-dark">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <button id="bttn" class="btn btn-dark" onclick="darkModeToggle()"><i id="id" class="fa fa-moon"></i></button>
                 </div>
             </div>
         </div>
     </div>
     <script>
-
         function darkModeToggle() {
             var element = document.body;
             element.classList.toggle("body_dark");
 
-
             const icon = document.querySelector('#id');
-            console.log(icon);
             if (icon.classList.contains('fa-moon')) {
                 icon.classList.remove('fa-moon');
                 icon.classList.add('fa-lightbulb');
@@ -57,25 +42,16 @@
                 icon.classList.remove('fa-lightbulb');
                 icon.classList.add('fa-moon');
             }
-
+            const button = document.querySelector('#bttn')
+            if (button.classList.contains('btn-dark')) {
+                button.classList.remove('btn-dark');
+                button.classList.add('btn-info');
+            } else {
+                button.classList.remove('btn-info');
+                button.classList.add('btn-dark');
             }
+        }
     </script>
-
 </section>
-
-{# <form action="#" class="banner_search_form banner_search_form_two">
-                        <div class="input-group">
-                            <input type="search" class="form-control" placeholder='Search ("/" to focus)'>
-                            <div class="input-group-append">
-                                <select class="custom-select" id="inlineFormCustomSelect">
-                                    <option selected>All Category</option>
-                                    <option value="1">Doc Archive</option>
-                                    <option value="2">Doc List</option>
-                                    <option value="3">coreBOS</option>
-                                </select>
-                            </div>
-                            <button type="submit"><i class="icon_search"></i></button>
-                        </div>
-                    </form> #}
 
 
