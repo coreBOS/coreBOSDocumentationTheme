@@ -1,0 +1,18 @@
+{% extends 'partials/simplesearch_base.html.twig' %}
+{% set show_sidebar = header_var('show_sidebar', [page, blog])|defined(true)  %}
+{% set show_pagination = header_var('show_pagination', [page, blog])|defined(true) %}
+
+{% block body %}
+ <section class="doc_documentation_area doc_documentation_full_area">
+     {% embed 'partials/layout.html.twig' %}
+                {% block left_sidebar %}
+                    {% include 'partials/left-sidebar.html.twig' %}
+                {% endblock %}
+                {% block item %}
+                    {% include 'partials/search-container.html.twig' %}
+                {% endblock %}
+    {% endembed %}
+
+    </div>
+</section>
+{% endblock %}

@@ -1,15 +1,9 @@
-<div class="col-lg-2 col-md-4 doc_right_mobile_menu">
+<div class="col-lg-2 col-md-4 doc_right_mobile_menu" id="sticky_doc">
     <div class="open_icon" id="right">
         <i class="arrow_carrot-left"></i>
         <i class="arrow_carrot-right"></i>
     </div>
     <div class="doc_rightsidebar scroll">
-
-        <div class="doc_switch">
-            <label for="something" class="tab-btn tab-btns"><i class="icon_lightbulb_alt"></i></label>
-            <input type="checkbox" name="something" id="something" class="tab_switcher">
-            <label for="something" class="tab-btn"><i class="far fa-moon"></i></label>
-        </div>
         <style>
         .page-toc > li > a{
             font-weight: 700 !important
@@ -20,7 +14,6 @@
             border-radius: 10px;
             padding: 10px;
         }
-
         </style>
         {% macro toc_loop(items) %}
             {% import _self as self %}

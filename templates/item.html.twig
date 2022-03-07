@@ -3,7 +3,7 @@
 {% set show_pagination = header_var('show_pagination', [page, blog])|defined(true) %}
 
 {% block body %}
- <section class="doc_documentation_area doc_documentation_full_area" id="sticky_doc">
+ <section class="doc_documentation_area doc_documentation_full_area">
     <div class="overlay_bg"></div>
             {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
                 {% include 'partials/breadcrumbs.html.twig' %}

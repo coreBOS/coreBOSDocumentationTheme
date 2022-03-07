@@ -10,7 +10,7 @@
             <div class="row">
             {% for card in page.header.cards %}
                 <div class="col-lg-4 col-sm-6">
-                <a class="custom-card" href="{{card.path}}">
+                <a class="custom-card" href="{{base_url}}{{card.path}}">
                     <div class="media theme_doc_item wow fadeInUp" data-wow-delay="0.4s">
                         <div class="media-body">
                             <h4 class="c_head">{{card.title}}</h4>

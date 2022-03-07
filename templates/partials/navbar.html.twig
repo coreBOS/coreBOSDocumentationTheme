@@ -19,35 +19,47 @@
                     </ol>
                 </nav>
             </div>
-            <div class="col-lg-8 col-md-8">
-            <section class="breadcrumb_area">
-                <div class="container custom_container">
-                    {# TNT search form #}
-                    <form role="form" class="tntsearch-form " action="{{ nojs_action }}" method="get">
-                        {% block tntsearch_input %}
-                        <div id="tntsearch-wrapper" class="form-group{{ dropdown ? ' tntsearch-dropdown' : '' }}">
-                            <input type="text" name="q" class="form-control form-input tntsearch-field{{ in_page ? ' tntsearch-field-inpage' : '' }}" data-tntsearch="{{ options|json_encode|e('html_attr') }}" placeholder="{{ placeholder }}" value="{{ not dropdown ? query|e : '' }}" autofocus>
-                            <span class="tntsearch-clear"{{ not query or dropdown ? ' style="display: none;"' : '' }}>&times;</span>
-                        </div>
-                        {% endblock %}
-                        <div class="tntsearch-results{{ in_page ? ' tntsearch-results-inpage' : '' }}">
-                        {% if tntsearch_results is defined and tntsearch_results is not empty and in_page %}
-                            {% include 'tntquery-ajax.html.twig' %}
-                        {% endif %}
-                        </div>
-                    </form>
-                    {# TNT search form end #}
-                </div>
-            </section>
+            <div class="col-lg-7 col-md-8">
+                <section class="breadcrumb_area">
+                    <div class="container custom_container">
+                        {% include 'partials/simplesearch_searchbox.html.twig' %}
+                    </div>
+                </section>
             </div>
             <div class="col-lg-2 col-sm-5">
-                <a href="#" style="margin-left: 5px;" class="btn btn-dark">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="#" class="btn btn-info"><i style="padding-right: 7px;" class="icon_clock_alt"></i>Updates</a>
+                <div class="row justify-content-end">
+                        <a href="https://github.com/tsolucio/corebos" target="_blank" style="margin-right: 10px;" class="btn btn-dark">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://blog.corebos.org/" target="_blank" style="margin-right: 10px;" class="btn btn-info">
+                            <i style="padding-right: 7px;" class="icon_clock_alt"></i>
+                            Updates
+                        </a>
+                        <button class="btn btn-dark"  onclick="darkModeToggle()"><i id="id"  class="fa fa-moon"></i></button>
+
+                </div>
             </div>
         </div>
     </div>
+    <script>
+
+        function darkModeToggle() {
+            var element = document.body;
+            element.classList.toggle("body_dark");
+
+
+            const icon = document.querySelector('#id');
+            console.log(icon);
+            if (icon.classList.contains('fa-moon')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-lightbulb');
+            } else {
+                icon.classList.remove('fa-lightbulb');
+                icon.classList.add('fa-moon');
+            }
+
+            }
+    </script>
 
 </section>
 

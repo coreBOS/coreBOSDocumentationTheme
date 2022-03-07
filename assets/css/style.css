@@ -4183,12 +4183,12 @@ ul.list-style li:last-child {
   font-size: 12px;
   top: 5px;
 }
-.doc_rightsidebar .doc_switch {
+.doc_switch {
   display: flex;
   align-items: center;
   padding-bottom: 36px;
 }
-.doc_rightsidebar .doc_switch .tab-btn {
+.doc_switch .tab-btn {
   font-size: 16px;
   color: #10b3d6;
   line-height: 22px;
@@ -4197,14 +4197,14 @@ ul.list-style li:last-child {
   cursor: pointer;
   transition: color 0.2s linear;
 }
-.doc_rightsidebar .doc_switch .tab-btn:hover {
+ .doc_switch .tab-btn:hover {
   color: #10b3d6;
 }
-.doc_rightsidebar .doc_switch .fa-moon {
+ .doc_switch .fa-moon {
   top: -1px;
   position: relative;
 }
-.doc_rightsidebar .doc_switch input[type=checkbox] {
+ .doc_switch input[type=checkbox] {
   width: 50px;
   height: 22px;
   border: 1px solid #91e1f2;
@@ -4218,7 +4218,7 @@ ul.list-style li:last-child {
   appearance: none;
   box-sizing: content-box;
 }
-.doc_rightsidebar .doc_switch input[type=checkbox]:before {
+ .doc_switch input[type=checkbox]:before {
   content: "";
   width: 16px;
   height: 16px;
@@ -4230,13 +4230,13 @@ ul.list-style li:last-child {
   transition: all 0.2s linear;
   left: 3px;
 }
-.doc_rightsidebar .doc_switch input[type=checkbox]:checked:before {
+ .doc_switch input[type=checkbox]:checked:before {
   left: calc(100% - 19px);
 }
-.doc_rightsidebar .doc_switch input[type=checkbox]:checked + .tab-btn {
+ .doc_switch input[type=checkbox]:checked + .tab-btn {
   color: #10b3d6;
 }
-.doc_rightsidebar .doc_switch input[type=checkbox] + .tab-btn {
+.doc_switch input[type=checkbox] + .tab-btn {
   color: #6b707f;
 }
 
