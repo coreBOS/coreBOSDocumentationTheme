@@ -173,3 +173,10 @@ pre[class*="language-"]>code {
   border-top-right-radius: 0.25rem !important;
   border-bottom-right-radius: 0.25rem !important;
 }
+.mobile{
+  display:none;
+}
+.mg-left-20{
+  margin-left: 8px !important;
+  border-radius: 0.35rem !important;
+}

@@ -1,5 +1,4 @@
 {% set placeholder = placeholder|default('Search...') %}
-
 {% set options = { uri: url, limit: limit, snippet: snippet, min: min, in_page: in_page, live_update: live_update, search_type: search_type } %}
 
 <section class="page_breadcrumb">
@@ -17,14 +16,14 @@
             </div>
             <div class="col-lg-2 col-sm-5">
                 <div class="row justify-content-end">
-                    <a href="https://blog.corebos.org/" target="_blank" style="margin-right: 10px;" class="btn btn-info">
+                    <a href="https://blog.corebos.org/" target="_blank" style="margin-right: 10px;" class="btn btn-info display-none">
                         <i style="padding-right: 7px;" class="icon_clock_alt"></i>
                         Updates
                     </a>
-                    <a href="https://github.com/tsolucio/corebos" target="_blank" style="margin-right: 10px;" class="btn btn-dark">
+                    <a href="https://github.com/tsolucio/corebos" target="_blank" style="margin-right: 10px;" class="btn btn-dark display-none">
                         <i class="fab fa-github"></i>
                     </a>
-                    <button id="bttn" class="btn btn-dark" onclick="darkModeToggle()"><i id="id" class="fa fa-moon"></i></button>
+                    <button id="bttn" class="btn btn-dark display-none" onclick="darkModeToggle()"><i id="id" class="fa fa-moon"></i></button>
                 </div>
             </div>
         </div>
