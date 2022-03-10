@@ -12,13 +12,6 @@
     .doc_documentation_full_area.body_fixed .doc_left_sidebarlist {
         width: 266px;
     }
-    .doc_documentation_full_area .container-fluid,.menu_one .container-fluid,.page_breadcrumb .container-fluid{
-        max-width: 1470px;
-    }
-    .doc_documentation_full_area .doc_mobile_menu{
-        flex: 0 0 25%;
-        max-width: 25%;
-    }
     .doc_documentation_full_area .col-lg-8 {
         flex: 0 0 56.333333%;
         max-width: 56.333333%;
@@ -96,7 +89,22 @@
         margin-right: 0;
     }
     .full-width-doc:not(.onepage-doc) .doc_left_sidebarlist{
-        width: 270px;
+      width: 234px;
+    }
+    .nav-sidebar .nav-item .nav-link {
+      font-size: 12px !important;
+    }
+    .nav-sidebar .nav-item .dropdown_nav li a {
+        font-size: 12px !important;
+    }
+    .doc_menu .nav-link{
+      font-size: 11px !important;
+    }
+    .h4, h4 {
+      font-size: 0.9rem !important;
+    }
+    p {
+      font-size: 12px !important;
     }
     .onepage_doc_area.doc_documentation_area.body_fixed .doc_rightsidebar {
         width: 196px;
@@ -108,7 +116,7 @@
         padding-left: 20px;
     }
     .doc_rightsidebar{
-        padding-left: 30px;
+        padding-left: 14px;
         margin-right: -45px;
     }
     .full-width-doc .doc_rightsidebar{

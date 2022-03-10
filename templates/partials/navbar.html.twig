@@ -3,8 +3,8 @@
 
 <section class="page_breadcrumb">
     <div class="container-fluid pl-60 pr-60">
-        <div class="row">
-            <div class="col-lg-2 col-sm-7">
+        <div class="row justify-content-end">
+            <div class="col-lg-2 col-sm-7" style="margin-right: 100px;">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                     {% include 'partials/logo.html.twig' %}
@@ -15,15 +15,17 @@
                 {% include 'partials/simplesearch-custom.html.twig' %}
             </div>
             <div class="col-lg-2 col-sm-5">
-                <div class="row justify-content-end">
-                    <a href="https://blog.corebos.org/" target="_blank" style="margin-right: 10px;" class="btn btn-info display-none">
+                <div class="row">
+                <div class="btn-group" role="group">
+                    <a href="https://blog.corebos.org/" target="_blank" class="btn btn-info display-none">
                         <i style="padding-right: 7px;" class="icon_clock_alt"></i>
                         Updates
                     </a>
-                    <a href="https://github.com/tsolucio/corebos" target="_blank" style="margin-right: 10px;" class="btn btn-dark display-none">
+                    <a href="https://github.com/tsolucio/corebos" target="_blank" class="btn btn-dark display-none">
                         <i class="fab fa-github"></i>
                     </a>
                     <button id="bttn" class="btn btn-dark display-none" onclick="darkModeToggle()"><i id="id" class="fa fa-moon"></i></button>
+                </div>
                 </div>
             </div>
         </div>

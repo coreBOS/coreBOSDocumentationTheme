@@ -2,14 +2,20 @@ a:hover {
   color: #10b3d6;
 }
 .h2, h2{
-  font-size: 1.75em !important;
+  font-size: 1.25em !important;
   font-weight: 600;
   margin-bottom: 1em;
 }
-.h3, h3{
-  font-size: 1.75em !important;
-  font-weight: 400;
+.h3, h3 {
+  font-size: 1.15em !important;
+  font-weight: 500;
   margin-bottom: 1em;
+}
+.h4, h4 {
+  font-size: 1.2rem;
+}
+p{
+  font-size: 14px;
 }
 .toc-anchor.before {
   margin-left: -24px;
