@@ -3490,7 +3490,7 @@ ul.list-style li:last-child {
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
 .doc_documentation_area {
-  padding-bottom: 110px;
+  padding-bottom: 20px;
   z-index: 0;
 }
 @media (min-width: 1400px) {
