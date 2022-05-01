@@ -3,15 +3,17 @@
 <div class="col-lg-8 col-md-8">
     <section class="theme_doc_area sec_pad">
         <div class="container">
-            <div class="section_title text-center">
+            <div class="text-center">
                 <h2 class="h_title wow fadeInUp">{{page.header.main_title}}</h2>
-                <p class="wow fadeInUp" data-wow-delay="0.2s">{{page.header.main_subtitle}}</p>
             </div>
-            <div class="row">
+            {% block content %}
+                {{ page.content|raw }}
+            {% endblock %}
+            <div class="row" style="background-image: url('user/pages/images/blog-header.jpg');background-repeat: no-repeat; background-size: 100%;">
             {% for card in page.header.cards %}
                 <div class="col-lg-4 col-sm-6">
-                <a class="custom-card" href="{{base_url}}{{card.path}}">
-                    <div class="media theme_doc_item wow fadeInUp" data-wow-delay="0.4s">
+                <a class="custom-card" href="{{card.path}}" target="{{card.target}}">
+                    <div class="media theme_doc_item wow fadeInUp" data-wow-delay="0.4s" style="padding:12px;margin-bottom:20px;margin-top:2px;">
                         <div class="media-body">
                             <h4 class="c_head">{{card.title}}</h4>
                             <p>{{card.subtitle}}</p>
